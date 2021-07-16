@@ -1,4 +1,5 @@
-# kevin-on-github.github.io
+# Link is for my github page. Clickity click.
+# https://kevin-on-github.github.io
 This is a github website, enjoy.
  - Will use this as a basic website to publish github projects.
  - I am not a web developer or programmer.
