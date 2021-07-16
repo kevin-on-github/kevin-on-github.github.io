@@ -1,8 +1,8 @@
 ## Welcome to my GitHub Page
 
-[View my current resume](https://kevin-on-github.github.io/resume.html)
-[View my linked in profile](https://www.linkedin.com/in/kevin-hicks-6b6b7a1b1)
-[View my credly certification badges](https://www.credly.com/users/kevin-hicks.7167af93)
+ - [View my current resume](https://kevin-on-github.github.io/resume.html)
+ - [View my linked in profile](https://www.linkedin.com/in/kevin-hicks-6b6b7a1b1)
+ - [View my credly certification badges](https://www.credly.com/users/kevin-hicks.7167af93)
 
 # Current Github projects
 ## [python-for-ne](https://github.com/kevin-on-github/python-for-ne)
