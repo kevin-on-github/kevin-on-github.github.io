@@ -5,65 +5,256 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Kevin Hicks github projects and resume</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Kevin Hicks github projects and resume</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-				<!-- Header -->
-				<header id="header">
-					<h1><a href="index.html">Main</a></h1>
-					<nav class="links">
-						<ul>
-							<li><a href="https://github.com/kevin-on-github">github</a></li>
-							<li><a href="https://1drv.ms/w/s!Ag4kbpcYXwH22F0RrsAJ5Du2FgUI?e=cg8Zuz">resume</a></li>
-							<li><a href="https://www.credly.com/users/kevin-hicks.7167af93">certifications</a></li>
-						</ul>
-					</nav>
-				
-				</header>
+<body class="is-preload">
 
-				<!-- Main -->
-					<div id="main">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="post1.html">Azure: Deploy an EVE-NG VM to lab all the things.</a></h2>
-										<p>Use the Azure CLI to deploy an Ubuntu 16.04 VM for EVE-NG labs.</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="07-22-2021">July 22, 2021</time>
-										<a href="#" class="author"><span class="name">Kevin Hicks</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<span class="image featured"><img src="images/post2_img.jpg" alt="" /></span>
-								<p>Sometimes an old laptop with an I7 processor is perfectly capable to run a lab. Then there
-									are times when the frustration of waiting 25 minutes for a lab to boot doesn't cut it. 
-									This is where a cloud vm running an emulation system can be a huge benefit. Let's put 
-									this together and cut those lab times by 80%. </p>
-								<footer>
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">Main</a></h1>
+			<nav class="links">
+				<ul>
+					<li><a href="https://github.com/kevin-on-github">github</a></li>
+					<li><a href="https://1drv.ms/w/s!Ag4kbpcYXwH22F0RrsAJ5Du2FgUI?e=cg8Zuz">resume</a></li>
+					<li><a href="https://www.credly.com/users/kevin-hicks.7167af93">certifications</a></li>
+				</ul>
+			</nav>
+			<nav class="icons">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/kevin-hicks-6b6b7a1b1"
+							class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+					<li><a href="https://github.com/kevin-on-github/" class="icon brands fa-github"><span
+								class="label">GitHub</span></a></li>
+					<li><a href="mailto:klh-2600-db8@outlook.com" class="icon solid fa-envelope"><span
+								class="label">Email</span></a></li>
+				</ul>
+			</nav>
+		</header>
 
-								</footer>
-							</article>
+		<!-- Main -->
+		<div id="main">
 
+			<!-- Post -->
+			<article class="post">
+				<header>
+					<div class="title">
+						<h2><a href="post2.html">Azure: Deploy an EVE-NG VM to lab all the things.</a></h2>
+						<p>Sometimes an old laptop with an I7 processor is perfectly capable to run a lab. Then there
+							are times when the frustration of waiting 25 minutes for a lab to boot doesn't cut it.
+							This is where a cloud vm running an emulation system can be a huge benefit. Let's put
+							this together and cut those lab times by 80%. </p>
 					</div>
+					<div class="meta">
+						<time class="published" datetime="07-22-2021">July 22, 2021</time>
+						<a href="#" class="author"><span class="name">Kevin Hicks</span><img src="images/avatar.jpg"
+								alt="" /></a>
+					</div>
+				</header>
+				<span class="image featured"><img src="images/post2_img.jpg" alt="" /></span>
 
-			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+				<div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 gist-border-0">
+					<article class="markdown-body entry-content container-lg" itemprop="text">
+						<h2><a id="user-content-how-to-deploy-eve-ng-in-ms-azure" class="anchor" aria-hidden="true"
+								href="#how-to-deploy-eve-ng-in-ms-azure"><svg class="octicon octicon-link"
+									viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>How to deploy EVE-NG in MS Azure.</h2>
+						<h3><a id="user-content-get-the-script" class="anchor" aria-hidden="true"
+								href="#get-the-script"><svg class="octicon octicon-link" viewBox="0 0 16 16"
+									version="1.1" width="16" height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>Get the script.</h3>
+						<ul>
+							<li>First download the <a
+									href="https://raw.githubusercontent.com/kevin-on-github/azure-automation/main/az-cli-script.sh"
+									rel="nofollow">az-cli-script.sh</a></li>
+							<li>Open a terminal to the location of the file, and... <br>
+								<code>chmod +x az-cli-script.sh</code>
+							</li>
+							<li>Execute the script, and fill in the info. <br>
+								<code>./az-cli-script.sh</code>
+							</li>
+						</ul>
+						<h3><a id="user-content-ssh-to-the-new-vm-and-enable-root-login-from-ssh-necessary-for-the-setup-of-eve-ng-can-disable-after-setup"
+								class="anchor" aria-hidden="true"
+								href="#ssh-to-the-new-vm-and-enable-root-login-from-ssh-necessary-for-the-setup-of-eve-ng-can-disable-after-setup"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>SSH to the new VM and enable root login from SSH. Necessary for the setup of
+							EVE-NG, can disable after setup.</h3>
+						<ul>
+							<li><code>sudo passwd root</code> and set a complex password.</li>
+							<li><code>sudo nano /etc/ssh/sshd_config</code>
+								<ul>
+									<li>Find "PermitRootLogin prohibit-password" and comment it out. <br>
+										<code># PermitRootLogin prohibit-password</code>
+									</li>
+									<li>Under that commented entry create a new line with <br>
+										<code>PermitRootLogin yes</code> \
+									</li>
+									<li>Save and close.</li>
+									<li>Back at the terminal run <br>
+										<code>sudo service ssh restart</code>
+									</li>
+								</ul>
+							</li>
+							<li>Logout your admin user account, and login as root to test access.</li>
+						</ul>
+						<h3><a id="user-content-ssh-to-the-new-vm-as-root-and-update-a-few-params" class="anchor"
+								aria-hidden="true" href="#ssh-to-the-new-vm-as-root-and-update-a-few-params"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>SSH to the new VM as 'root' and update a few params.</h3>
+						<ul>
+							<li>Copy and past this into a root terminal. <br>
+								<code>sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 noquiet"/' /etc/default/grub</code>
+								<br>
+								<code>update-grub</code>
+							</li>
+							<li>update hostname and hosts file <br>
+								<code>nano /etc/hosts</code> <br>
+								<code>127.0.0.1 eve-ng-vm.eve-ng.net eve-ng-vm</code>
+								<code>nano /etc/hostname</code> <br>
+								<code>eve-ng-vm</code>
+							</li>
+							<li>update the network interface names to prep for eve-ng install <br>
+								<code>nano /etc/network/interfaces</code> <br>
+								- Locate the ethernet name and change to 'eth0'. If nto listed, just add it. <br>
+								<code>auto eth0</code> <br>
+								<code>iface eth0 inet dhcp</code>
+							</li>
+							<li>REBOOT</li>
+						</ul>
+						<h3><a id="user-content-pull-the-eve-ng-install-script-and-pipe-to-bash" class="anchor"
+								aria-hidden="true" href="#pull-the-eve-ng-install-script-and-pipe-to-bash"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>Pull the EVE-NG install script, and pipe to bash</h3>
+						<p><code>wget -O - http://www.eve-ng.net/repo/install-eve.sh | bash -i</code></p>
+						<h3><a id="user-content-azure-vms-do-not-allow-for-a-promiscuous-nic-so-we-will-instead-create-a-private-switch-on-cloud1-pnet1-and-use-iptables-to-masquerade-the-lab-environment"
+								class="anchor" aria-hidden="true"
+								href="#azure-vms-do-not-allow-for-a-promiscuous-nic-so-we-will-instead-create-a-private-switch-on-cloud1-pnet1-and-use-iptables-to-masquerade-the-lab-environment"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>Azure VMs do not allow for a promiscuous NIC, so we will instead create a
+							private switch on Cloud1 (pnet1) and use iptables to masquerade the lab environment.</h3>
+						<p><code>nano /etc/network/interfaces</code></p>
+						<ul>
+							<li>
+								<p>Locate pnet1 and make appropriate changes. I've chosen an RFC1918 class C network,
+									but you choose whatever is appropriate. <br>
+									<code>auto pnet1</code> <br>
+									<code>iface pnet1 inet static</code> <br>
+									<code>address 192.168.1.1</code> <br>
+									<code>netmask 255.255.255.0</code> <br>
+									<code>bridge_ports eth1</code> <br>
+									<code>bridge_stp off</code>
+								</p>
+							</li>
+							<li>
+								<p>Enable ip forwarding <br>
+									<code>echo 1 &gt; /proc/sys/net/ipv4/ip_forward</code>
+								</p>
+							</li>
+							<li>
+								<p>Edit /etc/sysctl.conf to make it persistent across reboots. <br>
+									<code>nano /etc/sysctl.conf</code> \
+								</p>
+								<ul>
+									<li>Find the section for packet forwarding and remove the comment. <br>
+										<code> # Uncomment the next line to enable packet forwarding for IPv4</code>
+										<br>
+										<code>net.ipv4.ip_forward=1</code>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>Now will add a MASQUERADE for the new private subnet out the VMs NIC. Change the
+									subnet to whatever you assigned to pnet1 above. <br>
+									<code>iptables -t nat -A POSTROUTING -o pnet0 -s 192.168.1.0/24 -j MASQUERADE</code>
+								</p>
+							</li>
+							<li>
+								<p>Install this package to keep the settings across reboots. <br>
+									<code>apt-get install iptables-persistent</code>
+								</p>
+							</li>
+							<li>
+								<p>Then save and reload the rules. <br>
+									<code>netfilter-persistent save</code> <br>
+									<code>netfilter-persistent reload</code>
+								</p>
+							</li>
+							<li>
+								<p>Update and upgrade. <br>
+									<code>apt-get update &amp;&amp; apt-get upgrade -y</code>
+								</p>
+							</li>
+							<li>
+								<p>Congradulations, EVE-NG is now setup in Azure. Open the website by typing in your
+									Azure VMs dns name or public IP address. Make sure you login with Admin / eve and
+									immediately change your password to something secure. By default EVE-NG does not
+									have an SSL certificate. That's beyond this walkthrough, so happy labbing.</p>
+							</li>
+							<li>
+								<p>Once logged in, you will see that the only item you can add is the VPC. That's
+									because you have to pay money to Cisco to get their VIRL/CML Images. There are some
+									images available for free on the Interwebz, but that's beyond the scope of this
+									tutorial.</p>
+							</li>
+						</ul>
+					</article>
+				</div>
 
-	</body>
+		</div>
+		</p>
+		<footer>
+
+		</footer>
+		</article>
+
+	</div>
+
+	<!-- Footer -->
+	<section id="footer">
+		<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a
+				href="http://unsplash.com">Unsplash</a>.</p>
+	</section>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
