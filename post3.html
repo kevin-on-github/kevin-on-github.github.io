@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Kevin Hicks github projects and resume</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">Main</a></h1>
+			<nav class="links">
+				<ul>
+					<li><a href="https://github.com/kevin-on-github">github</a></li>
+					<li><a href="https://1drv.ms/w/s!Ag4kbpcYXwH22F0RrsAJ5Du2FgUI?e=cg8Zuz">resume</a></li>
+					<li><a href="https://www.credly.com/users/kevin-hicks.7167af93">certifications</a></li>
+				</ul>
+			</nav>
+			<nav class="icons">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/kevin-hicks-6b6b7a1b1"
+							class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+					<li><a href="https://github.com/kevin-on-github/" class="icon brands fa-github"><span
+								class="label">GitHub</span></a></li>
+					<li><a href="mailto:klh-2600-db8@outlook.com" class="icon solid fa-envelope"><span
+								class="label">Email</span></a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Post -->
+			<article class="post">
+				<header>
+					<div class="title">
+						<h2><a href="post3.html">Linux: Using cloud-init to deplay a bank of linux servers.</a></h2>
+						<p>Sometimes I want to work on an automation model using a bank of quickly deployed linux
+							virtual machines in my local lab. Here I have scripted in bash a fast method to download the
+							latest cloud-image, inject a cloud-init, install some bare minimum packages, and boot. I am
+							also injecting my ssh key, and a username/password for console login.</p>
+					</div>
+					<div class="meta">
+						<time class="published" datetime="07-26-2021">July 26, 2021</time>
+						<a href="#" class="author"><span class="name">Kevin Hicks</span><img src="images/avatar.jpg"
+								alt="" /></a>
+					</div>
+				</header>
+				<span class="image featured"><img src="images/cloud-init-big.png" alt="" /></span>
+				<p>
+				<div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 gist-border-0">
+					<article class="markdown-body entry-content container-lg" itemprop="text">
+						<h1><a id="user-content-cloud-linux" class="anchor" aria-hidden="true" href="#cloud-linux"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>Cloud-linux</h1>
+						<ul>
+							<li>I have picked 4 distros that I work with regularly. Im sure many others will work for
+								someone who puts the time in to script it.</li>
+							<li>Centos Stream is the only distro that does not have a "latest" download option.</li>
+						</ul>
+						<h2><a id="user-content-for-this-section-break-out-the-distros-detect-if-the-named-base-image-exists-and-provide-the-download"
+								class="anchor" aria-hidden="true"
+								href="#for-this-section-break-out-the-distros-detect-if-the-named-base-image-exists-and-provide-the-download"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>For this section break out the distros, detect if the named base image exists,
+							and provide the download.</h2>
+						<h3><a id="user-content-almalinux8" class="anchor" aria-hidden="true" href="#almalinux8"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>AlmaLinux8</h3>
+						<div>
+							<pre><code>
+					file=almalinux8-base.qcow2
+					if test -f "$file"; then
+						echo "$file exists."
+					else 
+						echo "$file does not exist."
+						curl https://repo.almalinux.org/almalinux/8/cloud/x86_64/images/AlmaLinux-8-GenericCloud-latest.x86_64.qcow2 -o almalinux8-base.qcow2
+					fi
+					</code></pre>
+						</div>
+						<h3><a id="user-content-centosstream8" class="anchor" aria-hidden="true"
+								href="#centosstream8"><svg class="octicon octicon-link" viewBox="0 0 16 16"
+									version="1.1" width="16" height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>CentosStream8</h3>
+						<div>
+							<pre><code>
+					file=centos-stream8-base.qcow2
+					if test -f "$file"; then
+						echo "$file exists."
+					else 
+						echo "$file does not exist."
+						curl https://cloud.centos.org/centos/8-stream/x86_64/images/CentOS-Stream-GenericCloud-8-20210603.0.x86_64.qcow2 -o centos-stream8-base.qcow2
+					fi
+					</code></pre>
+						</div>
+						<h3><a id="user-content-debian11" class="anchor" aria-hidden="true" href="#debian11"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>Debian11</h3>
+						<div>
+							<pre><code>
+					file=debiantesting-base.qcow2
+					if test -f "$file"; then
+						echo "$file exists."
+					else 
+						echo "$file does not exist."
+						curl https://cloud.debian.org/images/cloud/bullseye/daily/latest/debian-11-generic-amd64-daily.qcow2 -o debiantesting-base.qcow2
+					fi
+					</code></pre>
+						</div>
+						<h3><a id="user-content-ubuntu2004-lts" class="anchor" aria-hidden="true"
+								href="#ubuntu2004-lts"><svg class="octicon octicon-link" viewBox="0 0 16 16"
+									version="1.1" width="16" height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>Ubuntu20.04-LTS</h3>
+						<div>
+							<pre><code>
+					file=ubuntu20.04-base.qcow2
+					if test -f "$file"; then
+						echo "$file exists."
+					else 
+						echo "$file does not exist."
+						curl https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img -o ubuntu20.04-base.qcow2
+					fi
+					</code></pre>
+						</div>
+						<h3><a id="user-content-this-creates-a-seed-img-from-the-two-cfg-files-that-hold-the-cloud-init-data-script-assumes-all-files-reside-in-the-current-working-dir"
+								class="anchor" aria-hidden="true"
+								href="#this-creates-a-seed-img-from-the-two-cfg-files-that-hold-the-cloud-init-data-script-assumes-all-files-reside-in-the-current-working-dir"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>This creates a seed img from the two cfg files that hold the cloud-init data.
+							Script assumes all files reside in the current working dir.</h3>
+						<div>
+							<pre><code>
+					cloud-localds -v test1-seed.img cloud_init.cfg
+					</code></pre>
+						</div>
+						<div>
+							<pre><code>
+					echo 'Hello, lets setup your VM. Enter exact info.'
+					
+					echo 'What OS (almalinux8, centos-stream8, debiantesting)?'
+					    select vmos in almalinux8 centos-stream8 debiantesting ubuntu20.04; do
+						echo $vmos selected.
+					
+					echo 'How many vcpus (ex 1, 4)?'
+						read vmcpu
+					
+					echo 'How much RAM (ex 1024, 2048, etc)?'
+						read vmmem
+					
+					echo 'How many VMs do you want (ex 1, 6, etc)?'
+						read vmcount
+					</code></pre>
+						</div>
+						<div>
+							<pre><code>
+					
+
+					for i in $(seq 1 $vmcount); do
+					
+							# Assign a random name to the VM.
+							name=$vmos-cloud$i-$RANDOM
+							array+=($name)
+					
+							# Create a snapshot of the base image so each VM gets a clean start.
+							qemu-img create -b $vmos-base.qcow2 -f qcow2 -F qcow2 $name.qcow2
+					
+							# Variables are set, install the VMs.
+							virt-install --name $name \
+								--virt-type kvm --memory $vmmem --vcpus $vmcpu \
+								--boot hd,menu=on \
+								--disk path=test1-seed.img,device=cdrom \
+								--disk path=$name.qcow2,device=disk \
+								--graphics vnc \
+								--os-type Linux --os-variant $vmos \
+								--network network:default \
+								--noautoconsole
+					
+						done
+					</code></pre>
+						</div>
+						<div>
+							<pre><code>
+						echo You created $vmcount VMs of type $vmos, here are their names.
+						echo -e ${array[*]}
+					
+						# Specify a wait time for the VM to boot and grab an IP from dhcp. Their IP address will display in terminal.
+					
+						while true; do
+							for i in $(seq 0 $((vmcount - 1))); do
+								getipdata=$(virsh domifaddr ${array[$i]} | grep ipv4)
+								printf "${array[$i]} leased $getipdata \n"
+							done
+							sleep 5
+					
+						done
+						break
+					done
+					</code></pre>
+						</div>
+					</article>
+				</div>
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+	<section id="footer">
+		<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a
+				href="http://unsplash.com">Unsplash</a>.</p>
+	</section>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
