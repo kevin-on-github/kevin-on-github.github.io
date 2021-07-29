@@ -31,11 +31,11 @@
 			<nav class="icons">
 				<ul class="icons">
 					<li><a href="https://www.linkedin.com/in/kevin-hicks-6b6b7a1b1"
-	class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
 					<li><a href="https://github.com/kevin-on-github/" class="icon brands fa-github"><span
-		class="label">GitHub</span></a></li>
+								class="label">GitHub</span></a></li>
 					<li><a href="mailto:klh-2600-db8@outlook.com" class="icon solid fa-envelope"><span
-		class="label">Email</span></a></li>
+								class="label">Email</span></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -47,26 +47,37 @@
 			<article class="post">
 				<header>
 					<div class="title">
-<h2><a href="post3.html">Linux: Using cloud-init to deploy a bank of linux servers.</a></h2>
-<p>Sometimes I want to work on an automation model using a bank of quickly deployed linux
-	virtual machines in my local lab. Here I have scripted in bash a fast method to download the
-	latest cloud-image, inject a cloud-init, install some bare minimum packages, and boot. I am
-	also injecting my ssh key, and a username/password for console login.</p>
+						<h2><a href="post3.html">Linux: Using cloud-init to deploy a bank of linux servers.</a></h2>
+						<p>Sometimes I want to work on an automation model using a bank of quickly deployed linux
+							virtual machines in my local lab. Here I have scripted in bash a fast method to download the
+							latest cloud-image, inject a cloud-init, install some bare minimum packages, and boot. I am
+							also injecting my ssh key, and a username/password for console login.</p>
 					</div>
 					<div class="meta">
-<time class="published" datetime="07-26-2021">July 26, 2021</time>
-<a href="#" class="author"><span class="name">Kevin Hicks</span><img src="images/avatar.jpg"
-		alt="" /></a>
+						<time class="published" datetime="07-26-2021">July 26, 2021</time>
+						<a href="#" class="author"><span class="name">Kevin Hicks</span><img src="images/avatar.jpg"
+								alt="" /></a>
 					</div>
 				</header>
 				<span class="image featured"><img src="images/cloud-init-big.png" alt="" /></span>
 				<p>
 				<div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 gist-border-0">
-					<article class="markdown-body entry-content container-lg" itemprop="text"><h1><a id="user-content-cloud-linux" class="anchor" aria-hidden="true" href="#cloud-linux"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Cloud-linux</h1>
-<ul>
-<li>Various images are available for each distro used in the <a href="https://raw.githubusercontent.com/kevin-on-github/ansible-automation/main/basic-linux-cloud-init/virtsh-install.sh" rel="nofollow">virt-install.sh</a> script. Comment out the curl lines to skip downloading the images.</li>
-</ul>
-<div><pre><code>
+					<article class="markdown-body entry-content container-lg" itemprop="text">
+						<h1><a id="user-content-cloud-linux" class="anchor" aria-hidden="true" href="#cloud-linux"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>Cloud-linux</h1>
+						<ul>
+							<li>Various images are available for each distro used in the <a
+									href="https://raw.githubusercontent.com/kevin-on-github/ansible-automation/main/basic-linux-cloud-init/virtsh-install.sh"
+									rel="nofollow">virt-install.sh</a> script. Comment out the curl lines to skip
+								downloading the images.</li>
+						</ul>
+						<div>
+							<pre><code>
 # AlmaLinux8
 file=almalinux8-base.qcow2
 if test -f "$file"; then
@@ -112,9 +123,20 @@ else
 	echo "$file does not exist. Downloading..."
 	curl -sSL -o ubuntu20.04-base.qcow2 https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img
 fi
-</code></pre></div>
-<h3><a id="user-content-this-creates-a-seed-img-from-the-cloud-initcfg-files" class="anchor" aria-hidden="true" href="#this-creates-a-seed-img-from-the-cloud-initcfg-files"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>This creates a seed img from the <a href="https://raw.githubusercontent.com/kevin-on-github/ansible-automation/main/basic-linux-cloud-init/cloud_init.cfg" rel="nofollow">cloud-init.cfg</a> files.</h3>
-<div><pre><code>
+</code></pre>
+						</div>
+						<h3><a id="user-content-this-creates-a-seed-img-from-the-cloud-initcfg-files" class="anchor"
+								aria-hidden="true" href="#this-creates-a-seed-img-from-the-cloud-initcfg-files"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>This creates a seed img from the <a
+								href="https://raw.githubusercontent.com/kevin-on-github/ansible-automation/main/basic-linux-cloud-init/cloud_init.cfg"
+								rel="nofollow">cloud-init.cfg</a> files.</h3>
+						<div>
+							<pre><code>
 cloud-localds -v cloud-init-iso cloud_init.cfg
 
 # content of cloud-init.cfg. Make sure to edit the file for your specific deployment needs.
@@ -148,9 +170,19 @@ packages:
 # written to /var/log/cloud-init-output.log
 final_message: "The system is finally up, after $UPTIME seconds"
 
-</code></pre></div>
-<h3><a id="user-content-with-files-in-the-right-location-this-user-input-will-build-the-vms" class="anchor" aria-hidden="true" href="#with-files-in-the-right-location-this-user-input-will-build-the-vms"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>With files in the right location, this user input will build the VMs.</h3>
-<div><pre><code>
+</code></pre>
+						</div>
+						<h3><a id="user-content-with-files-in-the-right-location-this-user-input-will-build-the-vms"
+								class="anchor" aria-hidden="true"
+								href="#with-files-in-the-right-location-this-user-input-will-build-the-vms"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>With files in the right location, this user input will build the VMs.</h3>
+						<div>
+							<pre><code>
 echo 'Hello, lets setup your VM. Enter exact info, no error checking.'
 
 echo 'What OS (almalinux8, centos-stream8, debiantesting)?'
@@ -190,9 +222,20 @@ select vmos in almalinux8 centos-stream8 debiantesting opensuse15.3 ubuntu20.04;
 
 	echo You created $vmcount VMs of type $vmos, here are their names.
 	echo -e ${array[*]}
-</code></pre></div>
-<h3><a id="user-content-i-put-this-in-to-just-poll-virtsh-and-print-the-ip-addresses-assigned-to-the-vms" class="anchor" aria-hidden="true" href="#i-put-this-in-to-just-poll-virtsh-and-print-the-ip-addresses-assigned-to-the-vms"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>I put this in to just poll virtsh and print the ip addresses assigned to the VMs.</h3>
-<div><pre><code>
+</code></pre>
+						</div>
+						<h3><a id="user-content-i-put-this-in-to-just-poll-virtsh-and-print-the-ip-addresses-assigned-to-the-vms"
+								class="anchor" aria-hidden="true"
+								href="#i-put-this-in-to-just-poll-virtsh-and-print-the-ip-addresses-assigned-to-the-vms"><svg
+									class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16"
+									height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>I put this in to just poll virtsh and print the ip addresses assigned to the
+							VMs.</h3>
+						<div>
+							<pre><code>
 # Ctrl+C to quit. The IP addresses will display in terminal.
 
 	while true; do
@@ -205,9 +248,16 @@ select vmos in almalinux8 centos-stream8 debiantesting opensuse15.3 ubuntu20.04;
 	done
 	break
 done
-</code></pre></div>
-<h1><a id="user-content-script-done-enjoy-your-vms" class="anchor" aria-hidden="true" href="#script-done-enjoy-your-vms"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Script done. Enjoy your VMs.</h1>
-</article>
+</code></pre>
+						</div>
+						<h1><a id="user-content-script-done-enjoy-your-vms" class="anchor" aria-hidden="true"
+								href="#script-done-enjoy-your-vms"><svg class="octicon octicon-link" viewBox="0 0 16 16"
+									version="1.1" width="16" height="16" aria-hidden="true">
+									<path fill-rule="evenodd"
+										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+									</path>
+								</svg></a>Script done. Enjoy your VMs.</h1>
+					</article>
 				</div>
 		</div>
 	</div>
