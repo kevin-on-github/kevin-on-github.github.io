@@ -128,7 +128,7 @@ interface range GigabitEthernet0/0-3
 
 				<h3>MAIN-10</h3>
 
-				<pre><code>    
+				<code>    
 enable
 configure terminal
 hostname MAIN-10
@@ -148,7 +148,7 @@ interface GigabitEthernet0/0
 	no shutdown
 ! Static route added to establish public connectivity to the ISP
 ip route 0.0.0.0 0.0.0.0 10.1.1.2
-					</code></pre>
+					</code>
 
 				<h3>BRANCH-20</h3>
 
@@ -297,7 +297,6 @@ interface Tunnel0
 	! nhrp redirect is important here as it specifies this as a phase 3 hub
 	ip nhrp redirect
 	ip tcp adjust-mss 1360
-	ip ospf network point-to-multipoint
 	tunnel source GigabitEthernet0/0
 	tunnel mode gre multipoint
 	tunnel key 100
