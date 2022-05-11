@@ -256,8 +256,6 @@ crypto ikev2 keyring IKEV2_KR
 	pre-shared-key cisco123
 !
 crypto ikev2 profile IKEV2_PROF
-	match identity remote address 0.0.0.0 
-	identity local address 10.10.10.10
 	authentication remote pre-share
 	authentication local pre-share
 	keyring local IKEV2_KR
@@ -315,8 +313,8 @@ interface Tunnel0
 	ip nhrp network-id 100
 	! nhrp shortcut is important here as it specifies this as a phase 3 spoke
 	ip nhrp shortcut
-	! Here modify the non-broadcast multi-access address to the public ip address of each branch router.
-	ip nhrp nhs 172.16.1.1 nbma {X}.1.1.1 multicast
+	! Here map the non-broadcast multi-access address to the public ip address of main router.
+	ip nhrp nhs 172.16.1.1 nbma 10.1.1.1 multicast
 	ip tcp adjust-mss 1360
 	tunnel source GigabitEthernet0/0
 	tunnel mode gre multipoint
