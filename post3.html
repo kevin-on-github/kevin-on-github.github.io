@@ -78,51 +78,60 @@
 						</ul>
 						<div>
 							<pre><code>
+#!/bin/bash
+
+# Cloud-linux images are available for each distro used in the script. Names are important.
+# Uncomment curl line to download. Centos Stream is the only distro that does noat have a
+# "latest" download option.
+
+path=/var/lib/libvirt/images/
+
 # AlmaLinux8
 file=almalinux8-base.qcow2
-if test -f "$file"; then
-	echo "$file exists."
+if test -f "$path$file"; then
+    echo "$file exists."
 else 
-	echo "$file does not exist. Downloading..."
-	curl -sSL -o almalinux8-base.qcow2 https://repo.almalinux.org/almalinux/8/cloud/x86_64/images/AlmaLinux-8-GenericCloud-latest.x86_64.qcow2
+    echo "$file does not exist. Downloading..."
+    curl -SL https://repo.almalinux.org/almalinux/8/cloud/x86_64/images/AlmaLinux-8-GenericCloud-latest.x86_64.qcow2 -o $path'almalinux8-base.qcow2'
 fi
 
 # CentosStream8
 file=centos-stream8-base.qcow2
-if test -f "$file"; then
-	echo "$file exists."
+if test -f "$path$file"; then
+    echo "$file exists."
 else 
-	echo "$file does not exist. Downloading..."
-	curl -sSL -o centos-stream8-base.qcow2 https://cloud.centos.org/centos/8-stream/x86_64/images/CentOS-Stream-GenericCloud-8-20210603.0.x86_64.qcow2
+    echo "$file does not exist. Downloading..."
+    curl -SL https://cloud.centos.org/centos/8-stream/x86_64/images/CentOS-Stream-GenericCloud-8-20220125.1.x86_64.qcow2 -o $path'centos-stream8-base.qcow2'
 fi
 
 # Debian11
-file=debiantesting-base.qcow2
-if test -f "$file"; then
-	echo "$file exists."
+file=debian11-base.qcow2
+if test -f "$path$file"; then
+    echo "$file exists."
 else 
-	echo "$file does not exist. Downloading..."
-	curl -sSL -o debiantesting-base.qcow2 https://cloud.debian.org/images/cloud/bullseye/daily/latest/debian-11-generic-amd64-daily.qcow2
+    echo "$file does not exist. Downloading..."
+    curl -SL https://cloud.debian.org/images/cloud/bullseye/daily/latest/debian-11-generic-amd64-daily.qcow2 -o $path'debian11-base.qcow2'
 fi
 
 # Opensuse15.3
 file=opensuse15.3-base.qcow2
-if test -f "$file"; then
-	echo "$file exists."
+if test -f "$path$file"; then
+    echo "$file exists."
 else 
-	echo "$file does not exist. Downloading..."
-	curl -sSL -o opensuse15.3-base.qcow2 https://download.opensuse.org/repositories/Cloud:/Images:/Leap_15.3/images/openSUSE-Leap-15.3.x86_64-1.0.0-NoCloud-Build7.45.qcow2
+    echo "$file does not exist. Downloading..."
+    curl -SL https://download.opensuse.org/repositories/Cloud:/Images:/Leap_15.3/images/openSUSE-Leap-15.3.x86_64-1.0.1-NoCloud-Build2.146.qcow2 -o $path'opensuse15.3-base.qcow2'
 fi
 
 
 # Ubuntu20.04-LTS
 file=ubuntu20.04-base.qcow2
-if test -f "$file"; then
-	echo "$file exists."
+if test -f "$path$file"; then
+    echo "$file exists."
 else 
-	echo "$file does not exist. Downloading..."
-	curl -sSL -o ubuntu20.04-base.qcow2 https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img
+    echo "$file does not exist. Downloading..."
+    curl -SL https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img -o $path'ubuntu20.04-base.qcow2'
 fi
+
 </code></pre>
 						</div>
 						<h3><a id="user-content-this-creates-a-seed-img-from-the-cloud-initcfg-files" class="anchor"
