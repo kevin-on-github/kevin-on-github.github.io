@@ -89,47 +89,47 @@ path=/var/lib/libvirt/images/
 # AlmaLinux8
 file=almalinux8-base.qcow2
 if test -f "$path$file"; then
-    echo "$file exists."
+	echo "$file exists."
 else 
-    echo "$file does not exist. Downloading..."
-    curl -SL https://repo.almalinux.org/almalinux/8/cloud/x86_64/images/AlmaLinux-8-GenericCloud-latest.x86_64.qcow2 -o $path'almalinux8-base.qcow2'
+	echo "$file does not exist. Downloading..."
+	curl -SL https://repo.almalinux.org/almalinux/8/cloud/x86_64/images/AlmaLinux-8-GenericCloud-latest.x86_64.qcow2 -o $path'almalinux8-base.qcow2'
 fi
 
 # CentosStream8
 file=centos-stream8-base.qcow2
 if test -f "$path$file"; then
-    echo "$file exists."
+	echo "$file exists."
 else 
-    echo "$file does not exist. Downloading..."
-    curl -SL https://cloud.centos.org/centos/8-stream/x86_64/images/CentOS-Stream-GenericCloud-8-20220125.1.x86_64.qcow2 -o $path'centos-stream8-base.qcow2'
+	echo "$file does not exist. Downloading..."
+	curl -SL https://cloud.centos.org/centos/8-stream/x86_64/images/CentOS-Stream-GenericCloud-8-20220125.1.x86_64.qcow2 -o $path'centos-stream8-base.qcow2'
 fi
 
 # Debian11
 file=debian11-base.qcow2
 if test -f "$path$file"; then
-    echo "$file exists."
+	echo "$file exists."
 else 
-    echo "$file does not exist. Downloading..."
-    curl -SL https://cloud.debian.org/images/cloud/bullseye/daily/latest/debian-11-generic-amd64-daily.qcow2 -o $path'debian11-base.qcow2'
+	echo "$file does not exist. Downloading..."
+	curl -SL https://cloud.debian.org/images/cloud/bullseye/daily/latest/debian-11-generic-amd64-daily.qcow2 -o $path'debian11-base.qcow2'
 fi
 
 # Opensuse15.3
 file=opensuse15.3-base.qcow2
 if test -f "$path$file"; then
-    echo "$file exists."
+	echo "$file exists."
 else 
-    echo "$file does not exist. Downloading..."
-    curl -SL https://download.opensuse.org/repositories/Cloud:/Images:/Leap_15.3/images/openSUSE-Leap-15.3.x86_64-1.0.1-NoCloud-Build2.146.qcow2 -o $path'opensuse15.3-base.qcow2'
+	echo "$file does not exist. Downloading..."
+	curl -SL https://download.opensuse.org/repositories/Cloud:/Images:/Leap_15.3/images/openSUSE-Leap-15.3.x86_64-1.0.1-NoCloud-Build2.146.qcow2 -o $path'opensuse15.3-base.qcow2'
 fi
 
 
 # Ubuntu20.04-LTS
 file=ubuntu20.04-base.qcow2
 if test -f "$path$file"; then
-    echo "$file exists."
+	echo "$file exists."
 else 
-    echo "$file does not exist. Downloading..."
-    curl -SL https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img -o $path'ubuntu20.04-base.qcow2'
+	echo "$file does not exist. Downloading..."
+	curl -SL https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img -o $path'ubuntu20.04-base.qcow2'
 fi
 
 </code></pre>
@@ -141,14 +141,14 @@ fi
 									<path fill-rule="evenodd"
 										d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
 									</path>
-								</svg></a>This creates a seed img from the <a
-								href="https://raw.githubusercontent.com/kevin-on-github/ansible-automation/main/basic-linux-cloud-init/cloud_init.cfg"
-								rel="nofollow">cloud-init.cfg</a> files.</h3>
+								</svg></a># Create a seed iso from the two data files; user-data and meta-data
+								# 
+								</a> files.</h3>
 						<div>
 							<pre><code>
-cloud-localds -v cloud-init-iso cloud_init.cfg
+genisoimage -output seed.iso -volid cidata -joliet -rock user-data meta-data
 
-# content of cloud-init.cfg. Make sure to edit the file for your specific deployment needs.
+# content of user-data. Make sure to edit the file for your specific deployment needs.
 
 #cloud-config
 hostname: linux-cloud
@@ -179,6 +179,8 @@ packages:
 # written to /var/log/cloud-init-output.log
 final_message: "The system is finally up, after $UPTIME seconds"
 
+# Contents of meta-data
+instance-id: iid-local01\nlocal-hostname: cloudimg
 </code></pre>
 						</div>
 						<h3><a id="user-content-with-files-in-the-right-location-this-user-input-will-build-the-vms"
@@ -194,8 +196,8 @@ final_message: "The system is finally up, after $UPTIME seconds"
 							<pre><code>
 echo 'Hello, lets setup your VM. Enter exact info, no error checking.'
 
-echo 'What OS (almalinux8, centos-stream8, debiantesting)?'
-select vmos in almalinux8 centos-stream8 debiantesting opensuse15.3 ubuntu20.04; do
+echo 'What OS (almalinux8, centos-stream8, debian11)?'
+select vmos in almalinux8 centos-stream8 debian11 opensuse15.3 ubuntu20.04; do
 	echo $vmos selected.
 
 	echo 'How many vcpus (ex 1, 4)?'
@@ -214,23 +216,22 @@ select vmos in almalinux8 centos-stream8 debiantesting opensuse15.3 ubuntu20.04;
 		array+=($name)
 
 		# Create a snapshot of the base image so each VM gets a clean start.
-		qemu-img create -b $vmos-base.qcow2 -f qcow2 -F qcow2 $name.qcow2
+		qemu-img create -b $vmos-base.qcow2 -f qcow2 -F qcow2 $name.qcow2 12G
 
 		# Variables are set, install the VMs.
 		virt-install --name $name \
 			--virt-type kvm --memory $vmmem --vcpus $vmcpu \
 			--boot hd,menu=on \
-			--disk path=cloud-init.iso,device=cdrom \
+			--import \
+			--cdrom seed.iso \
 			--disk path=$name.qcow2,device=disk \
 			--graphics vnc \
-			--os-type Linux --os-variant $vmos \
+			--os-variant $vmos \
 			--network network:default \
 			--noautoconsole
 
 	done
 
-	echo You created $vmcount VMs of type $vmos, here are their names.
-	echo -e ${array[*]}
 </code></pre>
 						</div>
 						<h3><a id="user-content-i-put-this-in-to-just-poll-virtsh-and-print-the-ip-addresses-assigned-to-the-vms"
