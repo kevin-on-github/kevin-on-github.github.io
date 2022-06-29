@@ -133,7 +133,9 @@ sudo nano /etc/ssh/sshd_config
 									</path>
 								</svg></a>Pull the EVE-NG install script, and pipe to bash</h3>
 						<div>
-							<pre><code>`wget -O - https://www.eve-ng.net/focal/install-eve.sh | bash -i`
+							<pre><code>
+							'sudo -i' 
+							`wget -O - https://www.eve-ng.net/focal/install-eve.sh | bash -i`
 						</code></pre>
 						</div>
 						<h3><a id="user-content-azure-vms-do-not-allow-for-a-promiscuous-nic-so-we-will-instead-create-a-private-switch-on-cloud1-pnet1-and-use-iptables-to-masquerade-the-lab-environment"
